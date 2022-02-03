@@ -20,10 +20,11 @@ const App = () => {
     setCurrentPage((prevState) => prevState - 1)
     if(currentPage===0){ 
       setFormValues({name: '', age: '', email: ''})}
-  }
-
-  const returnHome = () => {
-    setCurrentPage(0)
+    }
+    
+    const returnHome = () => {
+      setCurrentPage(0)
+      setFormValues({name: '', age: '', email: ''})
   }
 
   return (
