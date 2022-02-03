@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Info = () => {
+const Info = (props) => {
+    const { name, email, age, handleChange, incrementPage} = props
     return(
         <div>
             <h1>Information Form</h1>
@@ -10,6 +11,8 @@ const Info = () => {
                     type="text"
                     name="name"
                     placeholder="Your Name Here"
+                    value={name}
+                    onChange={handleChange}
                  />
                 <br></br>
                 <br></br>
@@ -17,6 +20,8 @@ const Info = () => {
                     type="text"
                     name="email"
                     placeholder="Your Email Here"
+                    value={email}
+                    onChange={handleChange}
                     />
                 <br></br>
                 <br></br>
@@ -24,12 +29,14 @@ const Info = () => {
                     type="text"
                     name="age"
                     placeholder="Your Age Here"
+                    value={age}
+                    onChange={handleChange}
                 />
             </form>
             <br></br>
             <div>
                 <button>Back</button>
-                <button>Next</button>
+                <button onClick={incrementPage}>Next</button>
             </div>
         </div>
     )

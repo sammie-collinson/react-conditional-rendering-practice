@@ -4,11 +4,18 @@ import Info from './Info';
 import ErrorPage from './ErrorPage';
 import Thanks from './Thanks';
 
-const Form = () => {
+const Form = (props) => {
+    const { currentPage, incrementPage, name, age, email, handleChange } = props
     return(
         <div>
             <LandingPage />
-            <Info />
+            <Info
+                currentPage={currentPage}
+                incrementPage={incrementPage}
+                name={name}
+                age={age}
+                email={email}
+                handleChange={handleChange} />
             <ErrorPage />
             <Thanks />
         </div>
