@@ -18,7 +18,8 @@ const App = () => {
 
   const decrementPage = () => {
     setCurrentPage((prevState) => prevState - 1)
-    setFormValues({name: '', age: '', email: ''})
+    if(currentPage===0){ 
+      setFormValues({name: '', age: '', email: ''})}
   }
 
   return (

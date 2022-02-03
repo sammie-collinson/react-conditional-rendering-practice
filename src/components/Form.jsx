@@ -21,10 +21,12 @@ const Form = (props) => {
             age={age}
             email={email}
             handleChange={handleChange} />
-    } if(currentPage===2 && age>21){
+    } if(currentPage===2 && age>=21){
         pageSetter = <Thanks />
     } if(currentPage===2 && age<21){
-        pageSetter = <ErrorPage />
+        pageSetter = <ErrorPage
+            currentPage={currentPage}
+            decrementPage={decrementPage} />
     }
 
     return(
