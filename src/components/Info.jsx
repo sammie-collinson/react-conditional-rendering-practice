@@ -2,6 +2,10 @@ import React from 'react';
 
 const Info = (props) => {
     const { name, email, age, handleChange, incrementPage, decrementPage} = props
+    
+    const isEnabled = email.length>0 && age.length>0 && name.length>0
+
+
     return(
         <div>
             <h1>Information Form</h1>
@@ -12,7 +16,7 @@ const Info = (props) => {
                     name="name"
                     placeholder="Your Name Here"
                     value={name}
-                    onChange={handleChange}
+                    onChange={handleChange} 
                  />
                 <br></br>
                 <br></br>
@@ -36,7 +40,10 @@ const Info = (props) => {
             <br></br>
             <div>
                 <button onClick={decrementPage}>Back</button>
-                <button onClick={incrementPage}>Next</button>
+                <button
+                 onClick={incrementPage}
+                 disabled={!isEnabled}
+                 >Next</button>
             </div>
         </div>
     )
