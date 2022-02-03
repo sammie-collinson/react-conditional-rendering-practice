@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Info = (props) => {
-    const { name, email, age, handleChange, incrementPage} = props
+    const { name, email, age, handleChange, incrementPage, decrementPage} = props
     return(
         <div>
             <h1>Information Form</h1>
@@ -35,7 +35,7 @@ const Info = (props) => {
             </form>
             <br></br>
             <div>
-                <button>Back</button>
+                <button onClick={decrementPage}>Back</button>
                 <button onClick={incrementPage}>Next</button>
             </div>
         </div>

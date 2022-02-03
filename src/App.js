@@ -13,7 +13,11 @@ const App = () => {
   }
 
   const incrementPage = () => {
-    setCurrentPage((prevState) => prevState +1)
+    setCurrentPage((prevState) => prevState + 1)
+  }
+
+  const decrementPage = () => {
+    setCurrentPage((prevState) => prevState - 1)
   }
 
   return (
@@ -24,6 +28,7 @@ const App = () => {
         age={formValues.age}
         email={formValues.email}
         incrementPage={incrementPage}
+        decrementPage={decrementPage}
         handleChange={handleChange} />
     </div>
   );
