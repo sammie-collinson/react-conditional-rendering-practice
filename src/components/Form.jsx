@@ -5,7 +5,7 @@ import ErrorPage from './ErrorPage';
 import Thanks from './Thanks';
 
 const Form = (props) => {
-    const { currentPage, incrementPage, decrementPage, name, age, email, handleChange } = props
+    const { currentPage, incrementPage, decrementPage, name, age, email, handleChange, returnHome } = props
 
     let pageSetter;
     if(currentPage===0){
@@ -22,7 +22,8 @@ const Form = (props) => {
             email={email}
             handleChange={handleChange} />
     } if(currentPage===2 && age>=21){
-        pageSetter = <Thanks />
+        pageSetter = <Thanks
+            returnHome={returnHome} />
     } if(currentPage===2 && age<21){
         pageSetter = <ErrorPage
             currentPage={currentPage}

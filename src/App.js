@@ -22,6 +22,10 @@ const App = () => {
       setFormValues({name: '', age: '', email: ''})}
   }
 
+  const returnHome = () => {
+    setCurrentPage(0)
+  }
+
   return (
     <div className="App">
       <Form
@@ -31,7 +35,8 @@ const App = () => {
         email={formValues.email}
         incrementPage={incrementPage}
         decrementPage={decrementPage}
-        handleChange={handleChange} />
+        handleChange={handleChange}
+        returnHome={returnHome} />
     </div>
   );
 }
